@@ -419,3 +419,4 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id ".screenlayout/main.sh"
 exec --no-startup-id "nvidia-settings --load-config-only"
+exec --no-startup-id "nitrogen --restore"
