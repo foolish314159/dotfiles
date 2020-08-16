@@ -68,7 +68,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,5 +97,10 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias pm="sudo pacman"
+alias pms="sudo pacman -S"
+alias disks="lsblk -io NAME,TYPE,SIZE,MODEL,FSTYPE,PARTTYPENAME,LABEL,MOUNTPOINT | sed 's/|-/├─/; s/\`-/└─/'"
+alias iview="feh --geometry 1777x1000"
 
 screenfetch
