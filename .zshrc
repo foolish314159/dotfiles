@@ -100,6 +100,8 @@ export EDITOR='vim'
 
 alias pm="sudo pacman"
 alias pms="sudo pacman -S"
+alias sysupdate="sudo pacman -Syu"
+
 alias disks="lsblk -io NAME,TYPE,SIZE,MODEL,FSTYPE,PARTTYPENAME,LABEL,MOUNTPOINT | sed 's/|-/├─/; s/\`-/└─/'"
 alias iview="feh --geometry 1777x1000"
 alias backup="sudo timeshift-gtk"
