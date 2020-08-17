@@ -22,7 +22,7 @@ default_border pixel 1
 default_floating_border normal
 
 # Hide borders
-hide_edge_borders none
+hide_edge_borders both 
 
 # change borders
 bindsym $mod+u border none
@@ -31,7 +31,7 @@ bindsym $mod+n border normal
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Noto Sans 10
 
 # Lock screen
 bindsym $mod+0 exec --no-startup-id "i3lock-fancy-rapid 5 3"
@@ -43,8 +43,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -62,7 +62,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # program launcher
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -combi-modi window#drun#ssh -show combi -icon-theme "Papirus" -show-icons
 
 # change focus
 bindsym $mod+j focus left
@@ -113,8 +113,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1: "
+set $ws2 "2: "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -203,21 +203,21 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-        font xft:DejaVu Sans 9
-	strip_workspace_numbers yes
+        font xft:Font Awesome 5 Free Solid 10 
+	strip_workspace_numbers no
 
-    colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+        colors {
+        	background #222D31
+        	statusline #F9FAF9
+        	separator  #454947
 
-#                          border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
+#               	           border  backgr. text
+        	focused_workspace  #62a4f9 #1264a9 #dfdfdf
+        	active_workspace   #1264a9 #1264a9 #dfdfdf
+        	inactive_workspace #222d31 #222D31 #EEE8D5
+        	binding_mode       #16a085 #2C2C2C #F9FAF9
+        	urgent_workspace   #16a085 #FDF6E3 #E5201D
+        }
 }
 
 # hide/unhide i3status bar

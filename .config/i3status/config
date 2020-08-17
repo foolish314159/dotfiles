@@ -5,21 +5,15 @@ general {
 
 order += "volume master"
 order += "disk /"
-order += "ethernet _first_"
 order += "memory"
 order += "tztime local"
 
 volume master {
-        format = "VOL %volume"
-        format_muted = "VOL muted"
+        format = " %volume"
+        format_muted = ""
         device = "default"
         mixer = "Master"
         mixer_idx = 0
-}
-
-ethernet _first_ {
-        format_up = "E %ip (%speed)"
-        format_down = ""
 }
 
 tztime local {
@@ -27,11 +21,11 @@ tztime local {
 }
 
 memory {
-        format = "MEM %percentage_used"
+        format = " %percentage_used"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 disk "/" {
-        format = "HDD %percentage_used"
+        format = " %percentage_used"
 }
