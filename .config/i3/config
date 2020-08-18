@@ -115,7 +115,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
 set $ws2 "2: "
-set $ws3 "3"
+set $ws3 "3: "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -287,5 +287,6 @@ mode "$mode_gaps_outer" {
 
 # Autostart programs
 exec --no-startup-id "ibus-daemon -drx"
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/i3-sensible-terminal'
+exec --no-startup-id i3-msg "workspace $ws1; exec /usr/bin/firefox"
+exec --no-startup-id i3-msg "workspace $ws2; exec /usr/bin/i3-sensible-terminal"
+exec --no-startup-id i3-msg "workspace $ws3; exec /usr/bin/thunderbird"
